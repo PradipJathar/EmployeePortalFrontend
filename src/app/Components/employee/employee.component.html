@@ -7,7 +7,7 @@
         </div> 
 
         <div class="col-6 text-end"> 
-            <button class="btn btn-warning">Add Employee</button> 
+            <button class="btn btn-warning" (click)="openModel()">Add Employee</button> 
         </div> 
 
     </div> 
@@ -42,5 +42,65 @@
         </tbody>
 
     </table>
-    
+
 </div>
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal" #myModal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header bg-info">
+          <h4 class="modal-title">Add Employee</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeModel()"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-12">
+                <input type="text" name="name" class="form-control" placeholder="Name">
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-6">
+                <input type="text" name="email" class="form-control" placeholder="Email">   
+            </div>
+            <div class="col-6">
+                <input type="text" name="phone" class="form-control" placeholder="Phone">
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-6">
+                <input type="number" name="age" class="form-control" placeholder="Age">   
+            </div>
+            <div class="col-6">
+                <input type="number" name="salary" class="form-control" placeholder="Salary">
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-12">
+                <div class="form-group form-check">
+                    <input type="checkbox" name="status" class="form-check-input" placeholder="Status">
+                    <label>Is Active</label>
+                </div>
+            </div>
+          </div>
+
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="closeModel()">Save</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="closeModel()">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
