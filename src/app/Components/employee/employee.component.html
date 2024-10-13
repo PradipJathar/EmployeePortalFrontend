@@ -27,18 +27,22 @@
         </thead>
 
         <tbody>
-            <tr>
-                <td>Pardip Jathar</td>
-                <td>jatharpradipgmail.com</td>
-                <td>8550949161</td>
-                <td>26</td>
-                <td>62867</td>
-                <td>True</td>
-                <td class="text-center">
-                    <button class="btn btn-primary">Edit</button> || 
-                    <button class="btn btn-danger">Delete</button>
-                </td>                
-            </tr>
+
+            @for (item of employeeList; track $index)
+            {
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.age }}</td>
+                    <td>{{ item.salary }}</td>
+                    <td>{{ item.status }}</td>
+                    <td class="text-center">
+                        <button class="btn btn-primary">Edit</button> || 
+                        <button class="btn btn-danger">Delete</button>
+                    </td>                
+                </tr>
+            }
         </tbody>
 
     </table>

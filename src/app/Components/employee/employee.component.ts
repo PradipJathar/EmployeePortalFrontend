@@ -19,6 +19,7 @@ export class EmployeeComponent implements OnInit {
 
     ngOnInit(): void {
       this.setFormState();
+      this.getEmployess();
     }
 
     employeeList: Employee[] = [];
