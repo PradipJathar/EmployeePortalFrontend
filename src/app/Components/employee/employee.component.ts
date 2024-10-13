@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -8,12 +8,16 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   templateUrl: './employee.component.html',
   styleUrl: './employee.component.css'
 })
-export class EmployeeComponent {
+export class EmployeeComponent implements OnInit {
   @ViewChild("myModal") model : ElementRef | undefined;
   
     employeeForm : FormGroup = new FormGroup({});
 
     constructor(private fb: FormBuilder){};
+
+    ngOnInit(): void {
+      this.setFormState();
+    }
 
     openModel()
     {
@@ -42,7 +46,7 @@ export class EmployeeComponent {
         email: ['', Validators.required],
         mobile: ['', Validators.required],
         age: ['', Validators.required],
-        salery: ['', Validators.required],
+        salary: ['', Validators.required],
         status: [false, Validators.required]
 
       });

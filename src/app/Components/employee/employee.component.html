@@ -64,32 +64,32 @@
         
                 <div class="row">
                     <div class="col-12">
-                        <input type="text" name="name" class="form-control" placeholder="Name">
+                        <input type="text" formControlName="name" name="name" class="form-control" placeholder="Name">
                     </div>
                 </div>
         
                 <div class="row mt-3">
                     <div class="col-6">
-                        <input type="text" name="email" class="form-control" placeholder="Email">
+                        <input type="text" formControlName="email" name="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="col-6">
-                        <input type="text" name="phone" class="form-control" placeholder="Phone">
+                        <input type="text" formControlName="mobile" name="mobile" class="form-control" placeholder="Mobile">
                     </div>
                 </div>
         
                 <div class="row mt-3">
                     <div class="col-6">
-                        <input type="number" name="age" class="form-control" placeholder="Age">
+                        <input type="number" formControlName="age" name="age" class="form-control" placeholder="Age">
                     </div>
                     <div class="col-6">
-                        <input type="number" name="salary" class="form-control" placeholder="Salary">
+                        <input type="number" formControlName="salary" name="salary" class="form-control" placeholder="Salary">
                     </div>
                 </div>
         
                 <div class="row mt-3">
                     <div class="col-12">
                         <div class="form-group form-check">
-                            <input type="checkbox" name="status" class="form-check-input" placeholder="Status">
+                            <input type="checkbox" formControlName="status" name="status" class="form-check-input" placeholder="Status">
                             <label>Is Active</label>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
         
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="closeModel()">Save</button>
+                <button type="submit" [disabled]="this.employeeForm.invalid" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="closeModel()">Close</button>
             </div>
 
