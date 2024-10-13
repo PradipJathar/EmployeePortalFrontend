@@ -1,5 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Employee } from '../../Models/employee';
+import { EmployeeService } from '../../Services/employee.service';
 
 @Component({
   selector: 'app-employee',
@@ -19,6 +21,10 @@ export class EmployeeComponent implements OnInit {
       this.setFormState();
     }
 
+    employeeList: Employee[] = [];
+
+    empService = inject(EmployeeService);
+
     openModel()
     {
       const empModel = document.getElementById("myModal");
@@ -35,6 +41,13 @@ export class EmployeeComponent implements OnInit {
       {
         this.model.nativeElement.style.display = 'none';
       }
+    }
+
+    getEmployess()
+    {
+      this.empService.getAllEmployee().subscribe((res) => {
+        this.employeeList = res;
+      })
     }
   
     setFormState()
